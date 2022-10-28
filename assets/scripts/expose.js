@@ -13,7 +13,6 @@ function init() {
    //volume
    document.querySelector('input').addEventListener('input', () => {
     let volume = document.querySelector('input').value;
-    ///volume icon under volume
     let icon = document.querySelector('#volume-controls > img');
     if (volume >= 67) {
       icon.src = 'assets/icons/volume-level-3.svg';
