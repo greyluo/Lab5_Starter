@@ -19,12 +19,14 @@ function init() {
     );
   });
   document.querySelector('button').addEventListener('click', () => {
-    let utter = new SpeechSynthesisUtterance(document.querySelector('textarea').value);
+    let text = document.querySelector('textarea').value;
+    if(text.length==0){
+      return;
+    }
+    let utter = new SpeechSynthesisUtterance(text);
     let selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
     const voices = synth.getVoices();
-    utter.voice = voices.find((voice) => {
-      voice.name === selectedOption
-    });
+    utter.voice = voices.find(voice => voice.name === selectedOption);
     synth.speak(utter);
     img.src = 'assets/images/smiling-open.png';
     utter.addEventListener('end', () => {

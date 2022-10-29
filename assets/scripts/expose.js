@@ -1,7 +1,6 @@
 // expose.js
 window.addEventListener('DOMContentLoaded', init);
 function init() {
-  // TODO
   document.querySelector('#horn-select').addEventListener('change', (event) => {
     let horn = event.target.value;
     let audio = document.querySelector('audio');
@@ -10,7 +9,6 @@ function init() {
     img.src = `assets/images/${horn}.svg`;
     audio.src = `assets/audio/${horn}.mp3`;
   });
-   //volume
    document.querySelector('input').addEventListener('input', () => {
     let volume = document.querySelector('input').value;
     let icon = document.querySelector('#volume-controls > img');
